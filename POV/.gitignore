@@ -1,0 +1,13 @@
+# Deployment bundle: no source, no secrets.
+# The real .env is generated on the mini PC by install.sh.
+.env
+.env.*
+!.env.example
+
+# Exported docker images are produced by scripts/export-images.sh and are far
+# too large for git. Ship them on a flashdisk.
+/images/*.tar
+/images/*.tar.gz
+
+# Media is content, not code.
+/storage/

@@ -1,0 +1,19 @@
+# Development override: build images from the sibling repositories instead of
+# pulling the released tarballs. Use it together with docker-compose.yml:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml up -d --build
+#
+name: stayin-local
+
+services:
+  backend:
+    image: stayin/backend:dev
+    build:
+      context: ../Backend
+      dockerfile: Dockerfile
+
+  web:
+    image: stayin/web:dev
+    build:
+      context: ../Frontend
+      dockerfile: Dockerfile

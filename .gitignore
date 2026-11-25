@@ -1,0 +1,11 @@
+# Deployment repo: track only the bundle and the shared documents.
+# Each application has its own repository.
+/*
+!/.gitignore
+!/README.md
+!/POV/
+!/Documents/
+
+# Never track workspace tooling.
+/.zcode/
+/skills-lock.json
